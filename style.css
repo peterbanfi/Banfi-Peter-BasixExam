@@ -1,0 +1,53 @@
+body {
+    background: url("assets/site/mapblue.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#mainTable {
+    float: left;
+}
+
+img {
+    width: 70px;
+}
+
+#infoAside {
+    float: left;
+    height: 700px;
+    width: 340px;
+    background: grey;
+}
+
+#infoAside img {
+    width: 96%;
+    margin: 8px;
+}
+
+#infoAside h3 {
+    position: relative;
+    text-align: center;
+}
+
+/* tr {
+    padding-bottom: 20px;
+} */
+
+input {
+    padding: 15px;
+    font-size: 18px;
+}
+
+.portraits {
+    border-color: transparent;
+    background: transparent;
+    border-radius: 12px;
+    transition: border 2s;
+}
+
+.portraits:hover {
+    border: 1px solid black;
+    background: rgba(112, 128, 144, 0.534);
+    width: 210%;
+    cursor: pointer;
+}

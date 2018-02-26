@@ -20,5 +20,5 @@ FROM `characters`
 WHERE Halotte = '' 
 	AND Ház <> 'Lannister'
 	AND Szervezet <> 'Royalguard' 
-	AND Történet NOT LIKE ('%Lennister%' OR '%King%')
+	AND Történet NOT LIKE ('%Lennister%' OR '%King\`'s%')
 
