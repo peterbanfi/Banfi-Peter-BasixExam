@@ -31,7 +31,7 @@ function successAjax(xhttp) {
         search(characters);
     });
     document.querySelector('.portraits').addEventListener("click", function () {
-        char();
+        char(adat, characters);
     });;
 }
 
@@ -59,8 +59,20 @@ function sortingDatas(characters) {
     createTable(characters);
 }
 
-function char() {
-    console.log('hé');
+function char(adat, characters) {
+    for (var i in characters) {
+        if (adat == i) {
+            console.log(characters[i]["Név"]);
+        } else {
+            console.log('not working');
+        }
+    }
+    /* 
+    Itt volna a kiválasztásos rész, de mivel nem a leg effektívebb módon hoztam létre a táblákat kicsit belekavarodtam.
+    Azzal próbálkoztam, hogy minden a táblában létrehozott, karakter char() függvényéhez hozzáadtam egy i-edik számot,
+     és ez alapján szerettem volna elérni a karaktert, ahhoz, hogy a jobb oldalra mehessen az info táblába.
+    */
+    console.log('hi');
 }
 
 function search(characters) {
@@ -85,12 +97,16 @@ function search(characters) {
 
 }
 
+
+
 function createTable(characters) {
     var table = '';
+
     for (var i = 0; i < 8; i++) {
-        table += `<div class="portraits" onclick="char()">
+
+        table += `<div class="portraits"  onclick="char(${i})">
             <img src="${characters[i]["Portrékép"]}">
-            <td>${characters[i]["Név"]}</td></div>  `;
+            <td ">${characters[i]["Név"]}</td></div>  `;
     }
     table += '</tr> ';
     document.getElementById('firstRow').innerHTML = table;

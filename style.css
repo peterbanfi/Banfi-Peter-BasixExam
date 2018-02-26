@@ -13,9 +13,10 @@ img {
 }
 
 #infoAside {
+    position: relative;
     float: left;
-    height: 700px;
-    width: 340px;
+    height: 800px;
+    width: 350px;
     background: grey;
 }
 
@@ -27,15 +28,31 @@ img {
 #infoAside h3 {
     position: relative;
     text-align: center;
+    font-family: 'MedievalSharp', cursive;
 }
-
-/* tr {
-    padding-bottom: 20px;
-} */
 
 input {
     padding: 15px;
     font-size: 18px;
+    position: absolute;
+    width: 83%;
+    left: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.336);
+    color: rgba(0, 0, 0, 0.363);
+    border: none;
+    transition: background 2s;
+}
+
+input:hover {
+    background: white;
+}
+
+#icon {
+    position: absolute;
+    bottom: 32px;
+    right: 28px;
+    z-index: 1;
 }
 
 .portraits {
