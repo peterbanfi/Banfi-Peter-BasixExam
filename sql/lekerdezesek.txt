@@ -1,0 +1,24 @@
+SELECT Ház, count(Azonosító)
+FROM `characters`
+WHERE Halotte = '' 
+	AND Szervezet = ''
+GROUP BY Ház
+
+SELECT *
+FROM `characters`
+WHERE Halotte = '' 
+	AND Történet LIKE '%hero%'
+
+SELECT *
+FROM `characters`
+WHERE Halotte = '' 
+	AND Szervezet = 'nightwatch' 
+	AND Ház = ''
+
+SELECT Név AS 'Hero', Becenév AS 'Nick Name', Ház AS 'Big House'
+FROM `characters`
+WHERE Halotte = '' 
+	AND Ház <> 'Lannister'
+	AND Szervezet <> 'Royalguard' 
+	AND Történet NOT LIKE ('%Lennister%' OR '%King%')
+

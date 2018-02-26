@@ -1,0 +1,19 @@
+CREATE DATABASE got
+ENGINE InnoDB
+CHARACTER SET utf8 
+COLLATE utf-8_general_ci
+
+CREATE TABLE characters (
+	   Azonosító int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	   Név varchar(255) NOT NULL,
+   	   Becenév varchar(255),
+	   Halotte varchar(10),
+ 	   Portrékép varchar(255) NOT NULL,
+ 	   Kép varchar(255) NOT NULL,
+ 	   Történet text,
+ 	   Ház varchar(255),
+ 	   Szervezet varchar(255)
+)
+
+
+
