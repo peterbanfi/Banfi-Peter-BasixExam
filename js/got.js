@@ -27,9 +27,9 @@ function successAjax(xhttp) {
     document.getElementById('search').addEventListener("change", function () {
         search(characters);
     });
-    document.getElementById('search').addEventListener("change", function () {
-        search(characters);
-    });
+    /*     document.getElementById('search').addEventListener("click", function () {
+            empty();
+        }); */
     document.querySelector('.portraits').addEventListener("click", function () {
         char(adat, characters);
     });;
@@ -59,20 +59,17 @@ function sortingDatas(characters) {
     createTable(characters);
 }
 
-function char(adat, characters) {
-    for (var i in characters) {
-        if (adat == i) {
-            console.log(characters[i]["Név"]);
-        } else {
-            console.log('not working');
-        }
+function char(characters) {
+    for (var i = 0; i < characters.length; i++) {
+        (function createContent(i) {
+            var el = document.createElement('p');
+            el.textContent = 'Click';
+            el.addEventListener('click', function () {
+                console.log(i);
+            });
+            document.body.appendChild(el);
+        })(i);
     }
-    /* 
-    Itt volna a kiválasztásos rész, de mivel nem a leg effektívebb módon hoztam létre a táblákat kicsit belekavarodtam.
-    Azzal próbálkoztam, hogy minden a táblában létrehozott, karakter char() függvényéhez hozzáadtam egy i-edik számot,
-     és ez alapján szerettem volna elérni a karaktert, ahhoz, hogy a jobb oldalra mehessen az info táblába.
-    */
-    console.log('hi');
 }
 
 function search(characters) {
@@ -84,7 +81,7 @@ function search(characters) {
             table += `
                     <img src="${characters[i]["Kép"]}">
                     <h4>${characters[i]["Név"]}</h4> 
-                    <img src="..assets/houses/${characters[i].Ház}.png">
+                    <img src="..assets/houses/${characters[i]["Ház"]}.png">
                     <p>${characters[i]["Történet"]}</p>
                      `;
             table += '</div>';
@@ -97,66 +94,20 @@ function search(characters) {
 
 }
 
-
+function empty() {
+    document.querySelector('#search').innerHTML = '';
+}
 
 function createTable(characters) {
     var table = '';
 
-    for (var i = 0; i < 8; i++) {
-
-        table += `<div class="portraits"  onclick="char(${i})">
+    for (var i = 0; i < characters.length; i++) {
+        if (characters[i]["Halotte"] != 'true') {
+            table += `<div class="portraits"  onclick="char(${i})">
             <img src="${characters[i]["Portrékép"]}">
-            <td ">${characters[i]["Név"]}</td></div>  `;
+            <p ">${characters[i]["Név"]}</p></div>  `;
+        }
     }
-    table += '</tr> ';
+    table += '</div> ';
     document.getElementById('firstRow').innerHTML = table;
-    var table2 = '';
-    for (var i = 8; i < 16; i++) {
-        table2 += `<div class="portraits" onclick="char()">
-            <img src="${characters[i]["Portrékép"]}">
-            <td>${characters[i]["Név"]}</td> </div>  `;
-    }
-    table2 += '</tr>';
-    document.getElementById('secondRow').innerHTML = table2;
-    var table3 = '';
-    for (var i = 16; i < 24; i++) {
-        table3 += `<div class="portraits" onclick="char()">
-            <img src="${characters[i]["Portrékép"]}">
-            <td>${characters[i]["Név"]}</td> </div>`;
-    }
-    table3 += '</tr>';
-    document.getElementById('thirdRow').innerHTML = table3;
-    var table4 = '';
-    for (var i = 24; i < 32; i++) {
-        table4 += `<div class="portraits" onclick="char()">
-            <img src="${characters[i]["Portrékép"]}">
-            <td>${characters[i]["Név"]}</td> </div>`;
-    }
-    table4 += '</tr>';
-    document.getElementById('fourthRow').innerHTML = table4;
-    var table5 = '';
-    for (var i = 32; i < 40; i++) {
-        table5 += `<div class="portraits" onclick="char()">
-            <img src="${characters[i]["Portrékép"]}">
-            <td>${characters[i]["Név"]}</td> </div>`;
-    }
-    table5 += '</tr>';
-    document.getElementById('fifthRow').innerHTML = table5;
-
-    var table6 = '';
-    for (var i = 40; i < 48; i++) {
-        table6 += `<div class="portraits" onclick="char()">
-            <img src="${characters[i]["Portrékép"]}">
-            <td>${characters[i]["Név"]}</td> </div>`;
-    }
-    table6 += '</tr>';
-    document.getElementById('sixthRow').innerHTML = table6;
-    var table7 = '';
-    for (var i = 48; i < 51; i++) {
-        table7 += `<div class="portraits" onclick="char()">
-            <img src="${characters[i]["Portrékép"]}">
-            <td>${characters[i]["Név"]}</td> </div>`;
-    }
-    table7 += '</tr>';
-    document.getElementById('seventhRow').innerHTML = table7;
 }

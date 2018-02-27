@@ -1,34 +1,48 @@
 body {
     background: url("assets/site/mapblue.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 #mainTable {
     float: left;
 }
 
-img {
-    width: 70px;
+#rows {
+    margin-right: 300px;
 }
 
 #infoAside {
     position: relative;
-    float: left;
-    height: 800px;
+    float: right;
+    top: -700px;
+    height: 680px;
     width: 350px;
     background: grey;
+    font-family: 'MedievalSharp', cursive;
+    border: 2px solid black;
+    border-radius: 6px;
+    box-shadow: 0 0 20px black;
 }
 
 #infoAside img {
     width: 96%;
     margin: 8px;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 0 0 10px black;
 }
 
 #infoAside h3 {
+    font-size: 30px;
     position: relative;
     text-align: center;
-    font-family: 'MedievalSharp', cursive;
+}
+
+#infoAside h4 {
+    padding: 10px;
+}
+
+#infoAside p {
+    padding: 10px;
 }
 
 input {
@@ -56,15 +70,24 @@ input:hover {
 }
 
 .portraits {
-    border-color: transparent;
-    background: transparent;
-    border-radius: 12px;
-    transition: border 2s;
+    margin: 10px;
+    text-align: center;
 }
 
-.portraits:hover {
-    border: 1px solid black;
-    background: rgba(112, 128, 144, 0.534);
-    width: 210%;
+.portraits img {
+    opacity: .7;
+    box-shadow: 0 0 0 black;
+    border-radius: 50px;
+    transition: opacity, border, box-shadow 1s;
+}
+
+.portraits img:hover {
+    opacity: 1;
+    box-shadow: 0 0 30px black;
     cursor: pointer;
+}
+
+#firstRow div {
+    display: inline;
+    float: left;
 }
