@@ -1,20 +1,19 @@
 body {
     background: url("assets/site/mapblue.jpg");
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 #mainTable {
     float: left;
-}
-
-#rows {
-    margin-right: 300px;
+    width: 80%;
 }
 
 #infoAside {
+    top: 15px;
+    min-height: 79vh;
     position: relative;
     float: right;
-    top: -700px;
-    height: 680px;
     width: 350px;
     background: grey;
     font-family: 'MedievalSharp', cursive;
@@ -29,6 +28,16 @@ body {
     border: 1px solid black;
     border-radius: 3px;
     box-shadow: 0 0 10px black;
+}
+
+#infoAside #house {
+    max-width: 30px;
+    max-height: 30px;
+    position: absolute;
+    top: 330px;
+    left: 280px;
+    border: none;
+    box-shadow: 0 0 0 transparent;
 }
 
 #infoAside h3 {
@@ -69,25 +78,24 @@ input:hover {
     z-index: 1;
 }
 
-.portraits {
-    margin: 10px;
-    text-align: center;
+#firstRow p {
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+    top: 110px;
 }
 
-.portraits img {
+#firstRow img {
+    margin: 15px 45px;
+    float: left;
     opacity: .7;
     box-shadow: 0 0 0 black;
     border-radius: 50px;
     transition: opacity, border, box-shadow 1s;
 }
 
-.portraits img:hover {
+#firstRow img:hover {
     opacity: 1;
     box-shadow: 0 0 30px black;
     cursor: pointer;
-}
-
-#firstRow div {
-    display: inline;
-    float: left;
 }
